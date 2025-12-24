@@ -3,6 +3,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import { FaqSection } from '@/components/landing/FaqSection'
+import { PricingHighlights } from '@/components/landing/PricingSHighlights'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
@@ -427,90 +429,10 @@ export default function LandingPage() {
 				</div>
 			</section>
 
+			<PricingHighlights />
+
 			{/* FAQ */}
-			<section
-				id='faq'
-				className='mx-auto container px-4 pb-14'>
-				<h2 className='text-2xl font-semibold tracking-tight md:text-3xl'>
-					FAQ
-				</h2>
-
-				<div className='mt-6 grid gap-4 md:grid-cols-2'>
-					<Card className='rounded-2xl'>
-						<CardHeader>
-							<CardTitle className='text-base'>
-								Is hnfin free?
-							</CardTitle>
-						</CardHeader>
-						<CardContent className='text-sm text-muted-foreground'>
-							Yes. You can start for free and use the core
-							features to manage personal spending.
-						</CardContent>
-					</Card>
-
-					<Card className='rounded-2xl'>
-						<CardHeader>
-							<CardTitle className='text-base'>
-								Is my data shared?
-							</CardTitle>
-						</CardHeader>
-						<CardContent className='text-sm text-muted-foreground'>
-							No. Your financial data is private and isolated per
-							user account.
-						</CardContent>
-					</Card>
-
-					<Card className='rounded-2xl'>
-						<CardHeader>
-							<CardTitle className='text-base'>
-								Where should I start?
-							</CardTitle>
-						</CardHeader>
-						<CardContent className='text-sm text-muted-foreground'>
-							Set up categories, enter a few recent transactions,
-							then create monthly budgets.
-						</CardContent>
-					</Card>
-
-					<Card className='rounded-2xl'>
-						<CardHeader>
-							<CardTitle className='text-base'>
-								Who is hnfin for?
-							</CardTitle>
-						</CardHeader>
-						<CardContent className='text-sm text-muted-foreground'>
-							Anyone who wants clarity on cashflow, budgets, and a
-							consistent money habit.
-						</CardContent>
-					</Card>
-				</div>
-
-				<div className='mt-8 rounded-3xl border p-6 md:p-8'>
-					<div className='flex flex-col gap-4 md:flex-row md:items-center md:justify-between'>
-						<div>
-							<div className='text-lg font-semibold'>
-								Ready to take control?
-							</div>
-							<div className='mt-1 text-sm text-muted-foreground'>
-								Start today: track — categorize — budget.
-							</div>
-						</div>
-						<div className='flex gap-2'>
-							<Button
-								size='lg'
-								asChild>
-								<Link href='/enter'>Create account</Link>
-							</Button>
-							<Button
-								size='lg'
-								variant='outline'
-								asChild>
-								<Link href='/enter'>Sign in</Link>
-							</Button>
-						</div>
-					</div>
-				</div>
-			</section>
+			<FaqSection />
 
 			{/* Footer */}
 			<footer className='border-t bg-background'>
