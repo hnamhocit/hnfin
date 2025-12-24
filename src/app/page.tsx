@@ -203,7 +203,7 @@ export default function LandingPage() {
 									</div>
 								</div>
 
-								<div className='flex gap-2'>
+								<div className='flex gap-2 flex-wrap'>
 									<Button
 										className='w-full'
 										asChild>
