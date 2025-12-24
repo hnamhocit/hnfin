@@ -1,16 +1,18 @@
 'use client'
 
+import { usePathname, useRouter } from 'next/navigation'
 import { ReactNode, useEffect, useRef } from 'react'
 
 import { auth, db, doc, onAuthStateChanged, onSnapshot } from '@/config'
 import { IUser } from '@/interfaces'
 import { useUserStore } from '@/stores'
 import Loading from '../Loading'
-import EnterPage from './Enter'
 
 const Provider = ({ children }: { children: ReactNode }) => {
 	const { isLoading, user, setUser, setIsLoading } = useUserStore()
 	const unsubscribeProfileRef = useRef<null | (() => void)>(null)
+	const router = useRouter()
+	const pathname = usePathname()
 
 	useEffect(() => {
 		const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
@@ -47,6 +49,12 @@ const Provider = ({ children }: { children: ReactNode }) => {
 		}
 	}, [setIsLoading, setUser])
 
+	useEffect(() => {
+		if (user && (pathname === '/enter' || pathname === '/')) {
+			router.replace('/dashboard')
+		}
+	}, [router, user, pathname])
+
 	if (isLoading) {
 		return (
 			<div className='h-screen'>
@@ -54,8 +62,6 @@ const Provider = ({ children }: { children: ReactNode }) => {
 			</div>
 		)
 	}
-
-	if (!user) return <EnterPage />
 
 	return children
 }

@@ -1,4 +1,7 @@
+'use client'
+
 import { AnimatePresence, motion } from 'framer-motion'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
@@ -26,9 +29,8 @@ import {
 	signInWithPopup,
 } from '@/config'
 import { upsertUser } from '@/utils'
-import Image from 'next/image'
-import LoginForm from './LoginForm'
-import RegisterForm from './RegisterForm'
+import LoginForm from './components/LoginForm'
+import RegisterForm from './components/RegisterForm'
 
 export default function EnterPage() {
 	const tabOrder = useMemo(() => ['signin', 'register'] as const, [])
@@ -84,13 +86,15 @@ export default function EnterPage() {
 			<div className='mx-auto flex min-h-screen max-w-6xl items-center justify-center px-4 py-12'>
 				<div className='grid w-full items-center gap-10 md:grid-cols-2'>
 					<section className='hidden space-y-3 text-white md:block'>
-						<Image
-							src='/logo.png'
-							alt='HNFin Logo'
-							width={80}
-							height={80}
-							className='rounded-full border border-neutral-600 shadow'
-						/>
+						<Link href='/'>
+							<Image
+								src='/logo.png'
+								alt='HNFin Logo'
+								width={80}
+								height={80}
+								className='rounded-full border border-neutral-600 shadow'
+							/>
+						</Link>
 
 						<h1 className='text-3xl font-semibold tracking-tight'>
 							Welcome to{' '}
