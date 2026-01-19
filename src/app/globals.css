@@ -1,0 +1,15 @@
+@import 'tailwindcss';
+@plugin './hero.ts';
+@config "../../tailwind.config.js";
+/* Note: You may need to change the path to fit your project structure */
+@source '../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+/* Hide scrollbar but keep scroll */
+.hide-scrollbar {
+	-ms-overflow-style: none; /* IE/Edge (legacy) */
+	scrollbar-width: none; /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+	display: none; /* Chrome/Safari/Opera */
+}
