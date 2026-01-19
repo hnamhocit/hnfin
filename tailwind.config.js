@@ -10,11 +10,10 @@ module.exports = {
 					colors: {
 						background: 'transparent',
 
-						// chữ hơi "mint-white" (đỡ chói, hợp teal)
 						foreground: '#EAFBF7',
 
-						content1: '#071A17', // card base
-						content2: '#0A2420', // inner / elevated
+						content1: '#071A17',
+						content2: '#0A2420',
 						divider: 'rgba(234,251,247,0.08)',
 
 						// Primary: emerald-teal (money green, không neon)
@@ -67,7 +66,6 @@ module.exports = {
 							focus: '#DB262C', // Dùng shade 600 để làm viền focus (đậm hơn nền một chút).
 						},
 
-						// Focus ring theo primary nhưng "mềm"
 						focus: '#34D399',
 					},
 
